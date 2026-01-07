@@ -12,14 +12,17 @@ function RecipeCard({ recipe }) {
   const prepTime = formatTime(recipe.prepTime);
 
   const backupImage = (e) => {
-    e.target.src = BackupImage;
+    // Dynamically create a placeholder with the recipe name
+    e.target.src = `https://placehold.co/600x400?text=${encodeURIComponent(
+      recipe.name
+    )}`;
   };
 
   const setPopupTrue = () => setPopupVisiblity(true);
 
   const productPopup = (
-      <Recipe setPopup={setPopupVisiblity} recipe={recipe} />
-    );
+    <Recipe setPopup={setPopupVisiblity} recipe={recipe} />
+  );
 
   return (
     <div className={classes.recipeCard}>
@@ -53,15 +56,16 @@ const formatTime = (duration) => {
   if (!duration) {
     return "N/A"; // catch null values
   }
-  const hourString = duration.match(/(\d+)H/); // use regex to capture value from predetermined string pattern
-  const minuteString = duration.match(/(\d+)M/);
+  const hourMatch = duration.match(/(\d+)H/);
+  const minuteMatch = duration.match(/(\d+)M/);
 
-  const hours = hourString ? String(hourString[1]).padStart(2, "0") : "00"; // pads with 0s
-  const minutes = minuteString
-    ? String(minuteString[1]).padStart(2, "0")
-    : "00";
+  const hours = hourMatch ? hourMatch[1] : 0;
+  const minutes = minuteMatch ? minuteMatch[1] : 0;
 
-  return `${hours}:${minutes}`;
+  if (hours > 0 && minutes > 0) return `${hours}h ${minutes}m`;
+  if (hours > 0) return `${hours}h`;
+  if (minutes > 0) return `${minutes}m`;
+  return "N/A";
 };
 
 export default RecipeCard;

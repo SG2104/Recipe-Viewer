@@ -81,9 +81,9 @@ const style = {
     boxSizing: "border-box",
     margin: "1%",
     '@media screen and (max-width: 1000px)': {
-        display: 'block',
-        width: "100%",
-        margin: '15px 0px 15px 0px'
+      display: 'block',
+      width: "100%",
+      margin: '15px 0px 15px 0px'
     }
   },
   recipeImage: {
@@ -100,35 +100,35 @@ const style = {
     margin: 0
   },
   recipeCard2: {
-      borderRadius: "12px",
-      overflow: "hidden",
-      boxShadow:
-          "rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px",
-      textAlignLast: 'left',
-      textWrap: 'left',
-      padding: '20px',
-      position: 'fixed',
-      backgroundColor: 'white',
-      top: '50%',
-      left: '50%',
-      transform: 'translate(-50%, -50%)',
-      width: "75vw",
-      height: "75vh"
+    borderRadius: "12px",
+    overflow: "auto",
+    boxShadow:
+      "rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px",
+    textAlignLast: 'left',
+    textWrap: 'left',
+    padding: '20px',
+    position: 'fixed',
+    backgroundColor: 'white',
+    top: '50%',
+    left: '50%',
+    transform: 'translate(-50%, -50%)',
+    width: "75vw",
+    height: "75vh"
   },
-    popupWindow: {
-        position: "fixed",
-        top: 0,
-        left: 0,
-        width: "100vw",
-        height: "100vh",
-        zIndex: "199",
-        backgroundColor: "#000000A0",
-        boxShadow: "rgba(0, 0, 0, .8) 0px 0px 200px 50px inset",
-    },
-    xButton: {
-        display: 'block',
-        marginBottom: '20px'
-    }
+  popupWindow: {
+    position: "fixed",
+    top: 0,
+    left: 0,
+    width: "100vw",
+    height: "100vh",
+    zIndex: "199",
+    backgroundColor: "#000000A0",
+    boxShadow: "rgba(0, 0, 0, .8) 0px 0px 200px 50px inset",
+  },
+  xButton: {
+    display: 'block',
+    marginBottom: '20px'
+  }
 };
 
 export default style;

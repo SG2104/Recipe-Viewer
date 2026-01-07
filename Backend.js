@@ -22,7 +22,7 @@ const app = express();
 app.use(express.static("build"));
 app.use(express.json());
 
-app.get("/", (req, res) => res.send("It's working!"));
+
 
 app.get("/search", async (req, res) => {
   try {
